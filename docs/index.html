@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    　　
-    <!-- vue.js　-->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="manifest" href="manifest.json">
     <title>PWA Sample</title>
@@ -14,7 +12,10 @@
 <body>
     <div id="app">
         <p>{{ message }}</p>
-        <button v-on:click="ウッチャン">Reverse Message</button>
+        <button v-on:click="reverseMessage">ウッチャン</button>
+    </div>
+    <div>
+        <img src="images/icon.png">
     </div>
     <script>
         // service workerの登録関係
