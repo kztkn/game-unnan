@@ -3,7 +3,8 @@
 // キャッシュ名とキャッシュファイルの指定
 var CACHE_NAME = 'pwa-sample-caches';
 var urlsToCache = [
-    '/kztkn.github.io/'
+    '/kztkn.github.io/',
+    '/sound/start_se.wav'
 ];
 
 // インストール処理

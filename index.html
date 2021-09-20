@@ -10,11 +10,21 @@
 </head>
 
 <body>
+    <div id="sound">
+        <h1>{{ title }}</h1>
+        <button v-on:click="playgame">さあ、ウッチャンナンチャンゲームのはじまりだ</button>
+    </div>
     <div id="app">
         <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">Reverse Message</button>
+        <img v-on:click="callUtchan" src="images/utchan.png">
+        <img v-on:click="callNanchan" src="images/nanchan.png">
     </div>
+
     <script>
+        const start_se = new Audio('sound/start_se.wav');
+        const utchan_se = new Audio('sound/utchan_se.wav');
+        const nanchan_se = new Audio('sound/nanchan_se.wav');
+
         // ServiceWorker登録：https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ja
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service_worker.js').then(function (registration) {
@@ -26,11 +36,29 @@
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'ナンチャン'
+                message: 'ボタンを押してね！'
             },
             methods: {
-                reverseMessage: function () {
-                    this.message = this.message.split('').reverse().join('')
+                callUtchan: function () {
+                    utchan_se.currentTime = 0;
+                    utchan_se.play();
+                },
+                callNanchan: function () {
+                    utchan_se.currentTime = 0;
+                    nanchan_se.play();
+                },
+
+            }
+        });
+
+        var app2 = new Vue({
+            el: '#sound',
+            data: {
+                title: 'ウッチャンナンチャンゲーム'
+            },
+            methods: {
+                playgame: function () {
+                    start_se.play();
                 }
             }
         });
