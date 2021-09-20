@@ -1,7 +1,7 @@
 // キャッシュファイルの指定
 var CACHE_NAME = 'pwa-sample-caches';
 var urlsToCache = [
-    '/kztkn.github.io/game-unnan/',
+    '/kztkn.github.io/',
 ];
 
 // インストール処理
